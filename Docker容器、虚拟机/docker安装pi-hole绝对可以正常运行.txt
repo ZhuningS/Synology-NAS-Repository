@@ -1,0 +1,32 @@
+拉取镜像
+docker pull k3mgszda.mirror.aliyuncs.com/diginc/pi-hole
+安装启动
+docker run -d --name pi-hole \
+    -p 5312:53/tcp -p 5312:53/udp -p 8012:80 \                       端口映射 如果你的端口不冲突可以 替换5312 8012 为 53 80
+    -v "${DOCKER_CONFIGS}/docker/pihole/:/etc/pihole/" \		本地目录挂载
+    -v "${DOCKER_CONFIGS}/docker/dnsmasq.d/:/etc/dnsmasq.d/" \		本地目录挂载
+    -e ServerIP="172.17.0.2" \						pihole容器获取的ip 如果不知道可以运行一次查看ip查看后删除容器填写ip
+    -e TZ="UTC" \							运行时区
+    -e WEBPASSWORD="密码" \						web管理密码
+    -e DNS1="8.8.8.8" \							dns1 默认谷歌
+    -e DNS2="8.8.4.4" \							dns2默认谷歌
+    -e VIRTUAL_HOST="192.168.99.1" \					白名单ip 必须是你的宿主机ip
+    --restart=unless-stopped \
+    diginc/pi-hole
+
+
+
+
+
+端口冲突使用方法
+将你的宿主机进行端口映射 将宿主机8012端口映射为外部80	宿主机5312端口映射为外部53
+方式1：
+直接修改联网设备的首选DNS服务器IP为你的外部ip地址
+方式2：
+修改主路由的DHCP设置中的默认DNS服务器。这样所有连接到主路由的设备均会默认使用该DNS
+
+正常80 53 端口使用方法
+方式1：
+直接修改联网设备的首选DNS服务器IP为宿主机ip
+方式2：
+修改主路由的DHCP设置中的默认DNS服务器。这样所有连接到主路由的设备均会默认使用该DNS

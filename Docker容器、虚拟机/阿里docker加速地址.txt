@@ -1,0 +1,35 @@
+加速地址 k3mgszda.mirror.aliyuncs.com/
+
+
+使用方法
+docker pull https://k3mgszda.mirror.aliyuncs.com/diameter/rtorrent-rutorrent
+docker pull k3mgszda.mirror.aliyuncs.com/homeassistant/home-assistant
+
+docker pull k3mgszda.mirror.aliyuncs.com/linuxserver/qbittorrent
+docker pull k3mgszda.mirror.aliyuncs.com/tikia/xubuntu-x2go-vuze
+docker pull k3mgszda.mirror.aliyuncs.com/jamesyale/docker-vuze
+
+docker pull k3mgszda.mirror.aliyuncs.com/owncloud
+
+
+docker pull k3mgszda.mirror.aliyuncs.com/xujinkai/aria2-with-webui
+
+
+
+docker pull k3mgszda.mirror.aliyuncs.com/yinheli/docker-thunder-xware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
